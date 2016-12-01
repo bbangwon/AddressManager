@@ -81,6 +81,69 @@ void outputContactList() //연락처 목록 조회
 	}
 }
 
+void editOwnerInfo()
+{
+	int inputNum;
+
+	cout << "1. 소유자 이름 수정" << endl;
+	cout << "2. 소유자 전화번호 수정" << endl;
+	cout << "3. 소유자 이메일 수정" << endl;
+	cout << "4. 소유자 주소 수정" << endl;
+	cout << "5. 소유자 트위터 계정 수정" << endl;
+	cout << "6. 수정 없이 이전 메뉴로" << endl;
+	cin >> inputNum;
+
+	switch (inputNum)
+	{
+	case 1:
+		cin >> owner.name;
+		cout << "소유자의 이름이 수정되었습니다." << endl;
+		break;
+	case 2:
+		cin >> owner.phoneNumber;
+		cout << "소유자의 전화번호가 수정되었습니다." << endl;
+		break;
+	case 3:
+		cin >> owner.email;
+		cout << "소유자의 이메일이 수정되었습니다." << endl;
+		break;
+	case 4:
+		cin >> owner.address;
+		cout << "소유자의 주소가 수정되었습니다." << endl;
+		break;
+	case 5:
+		cin >> owner.twitterAccount;
+		cout << "소유자의 트위터 계정이 수정되었습니다." << endl;
+		break;
+	default:
+		cout << "아무것도 수정되지 않았습니다." << endl;
+	}
+}
+
+int removeContactByIndex(int index)
+{
+	// index가 0보다 작거나 contactNumber보다 크면 삭제 불가
+	if ((index >= contactNumber) || (index < 0))
+		return 0;
+
+	int i;
+	for (i = index + 1; i < contactNumber; i++)
+	{
+		*(contacts + i - 1) = *(contacts + i);
+	}
+	contactNumber--;
+	return 1;
+}
+
+void printContactInfoByIndex(int index)
+{
+	cout << index << "의 index를 가진 연락처 조회" << endl;
+	cout << "연락처 이름: " << contacts[index].name << endl;
+	cout << "연락처 전화번호: " << contacts[index].phoneNumber << endl;
+	cout << "연락처 이메일: " << contacts[index].email << endl;
+	cout << "연락처 주소: " << contacts[index].address << endl;
+}
+
 void runOwnerMenu()
 {
 	int menuNum;
@@ -88,7 +151,8 @@ void runOwnerMenu()
 	do {
 		cout << "1. 소유자 정보 입력" << endl;
 		cout << "2. 소유자 정보 조회" << endl;
-		cout << "3. 이전 화면" << endl;
+		cout << "3. 소유자 정보 수정" << endl;
+		cout << "4. 이전 화면" << endl;
 		cin >> menuNum;
 
 		switch (menuNum)
@@ -100,22 +164,29 @@ void runOwnerMenu()
 			outputOwnerInfo();
 			break;
 		case 3:
+			editOwnerInfo();
+			break;
+		case 4:
 			cout << "이전 화면으로 돌아갑니다." << endl;
 			break;
 		default:
 			cout << "잘못 입력 했습니다. 다시 해주세요" << endl;
 		}
 
-	} while (menuNum != 3);
+	} while (menuNum != 4);
 }
 
 void runContactMenu()
 {
 	int menuNum;
+	int result;
+	int index;
 	do {
 		cout << "1. 연락처 추가 입력" << endl;
 		cout << "2. 연락처 목록 조회" << endl;
-		cout << "3. 이전 화면" << endl;
+		cout << "3. 연락처 삭제" << endl;
+		cout << "4. 연락처 상세 조회" << endl;
+		cout << "5. 이전 화면" << endl;
 		cin >> menuNum;
 
 		switch (menuNum)
@@ -127,12 +198,26 @@ void runContactMenu()
 			outputContactList();
 			break;
 		case 3:
+			cout << "삭제할 연락처 index : ";
+			cin >> index;
+			result = removeContactByIndex(index);
+			if (result == 1)
+				cout << "정상적으로 삭제되었습니다." << endl;
+			else
+				cout << "정상적으로 삭제되지 않았습니다." << endl;
+			break;
+		case 4:
+			cout << "조회할 연락처 index : ";
+			cin >> index;
+			printContactInfoByIndex(index);
+			break;
+		case 5:
 			cout << "이전 화면으로 돌아갑니다." << endl;
 			break;
 		default:
 			cout << "잘못 입력 했습니다. 다시 해주세요" << endl;
 		}
-	} while (menuNum != 3);
+	} while (menuNum != 5);
 }
 
 
@@ -162,7 +247,6 @@ void runMainMenu()
 		}
 	} while (menuNum != 3);
 }
-
 
 int main()
 {
