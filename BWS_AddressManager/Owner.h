@@ -1,30 +1,30 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 
 class Owner
 {
 private:
-	char name[20];	//ÀÌ¸§
-	char phoneNumber[13];	//ÀüÈ­¹øÈ£
-	char email[30];	//ÀÌ¸ŞÀÏ
-	char address[50];	//ÁÖ¼Ò
-	char twitterAccount[20];	//Æ®À§ÅÍ °èÁ¤
+	char name[20];	//ì´ë¦„
+	char phoneNumber[13];	//ì „í™”ë²ˆí˜¸
+	char email[30];	//ì´ë©”ì¼
+	char address[50];	//ì£¼ì†Œ
+	char twitterAccount[20];	//íŠ¸ìœ„í„° ê³„ì •
 
 public:
 	Owner();
 	~Owner();
 
-	//¼ÒÀ¯ÀÚ Á¤º¸ ÀÔ·Â
+	//ì†Œìœ ì ì •ë³´ ì…ë ¥
 	void inputOwnerInfo(char *inName, 
 		char *inPhoneNumber = nullptr,
 		char *inEmail = nullptr, 
 		char *inAddress = nullptr,
 		char *inTwitterAccount = nullptr);
 
-	//¼ÒÀ¯ÀÚ Á¤º¸ Ãâ·Â
+	//ì†Œìœ ì ì •ë³´ ì¶œë ¥
 	void printOwnerInfo();
 
-	//¼ÒÀ¯ÀÚ Á¤º¸ ¼öÁ¤
+	//ì†Œìœ ì ì •ë³´ ìˆ˜ì •
 	void editOwnerInfo(char *inName,
 		char *inPhoneNumber = nullptr,
 		char *inEmail = nullptr,

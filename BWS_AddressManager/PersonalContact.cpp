@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "PersonalContact.h"
 
 
@@ -11,7 +11,7 @@ PersonalContact::~PersonalContact()
 {
 }
 
-//º¹»ç »ı¼ºÀÚ
+//ë³µì‚¬ ìƒì„±ì
 PersonalContact::PersonalContact(PersonalContact & personal)
 {
 	strcpy_s(name, 20, personal.name);
@@ -20,7 +20,7 @@ PersonalContact::PersonalContact(PersonalContact & personal)
 	strcpy_s(address, 50, personal.address);
 }
 
-//¿¬¶ôÃ³ ÀÔ·Â
+//ì—°ë½ì²˜ ì…ë ¥
 void PersonalContact::inputContact(char * inName, char * inPhoneNumber, char * inEmail, char * inAddress)
 {
 	if (inName != nullptr)
@@ -36,7 +36,7 @@ void PersonalContact::inputContact(char * inName, char * inPhoneNumber, char * i
 		strcpy_s(address, 50, inAddress);
 }
 
-//¿¬¶ôÃ³ Á¶È¸
+//ì—°ë½ì²˜ ì¡°íšŒ
 void PersonalContact::getContact(char * outName, char * outPhoneNumber, char * outEmail, char * outAddress)
 {
 	if (outName != nullptr)
@@ -52,7 +52,7 @@ void PersonalContact::getContact(char * outName, char * outPhoneNumber, char * o
 		strcpy_s(outAddress, 50, address);
 }
 
-//¿¬¶ôÃ³ ¼öÁ¤
+//ì—°ë½ì²˜ ìˆ˜ì •
 void PersonalContact::editContact(char * inName, char * inPhoneNumber, char * inEmail, char * inAddress)
 {
 	if (inName != nullptr)

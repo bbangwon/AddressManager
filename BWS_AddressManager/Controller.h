@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include "Contact.h"
 #include "Menu.h"
@@ -11,22 +11,22 @@ private:
 	Menu menu;
 	Owner owner;
 
-	void inputOwnerInfo();	//¼ÒÀ¯ÀÚ Á¤º¸ ÀÔ·Â
-	void printOwnerInfo();	//¼ÒÀ¯ÀÚ Á¤º¸ Ãâ·Â
-	void editOwnerInfo();	//¼ÒÀ¯ÀÚ Á¤º¸ ¼öÁ¤
+	void inputOwnerInfo();	//ì†Œìœ ì ì •ë³´ ì…ë ¥
+	void printOwnerInfo();	//ì†Œìœ ì ì •ë³´ ì¶œë ¥
+	void editOwnerInfo();	//ì†Œìœ ì ì •ë³´ ìˆ˜ì •
 
-	void addContact();	//¿¬¶ôÃ³ Á¤º¸ ÀÔ·Â
-	void printContactList();	//¿¬¶ôÃ³ ÀüÃ¼ ¸ñ·Ï Á¶È¸
-	void printContactDetail();	//¿¬¶ôÃ³ »ó¼¼ Á¶È¸
-	void editContact();	//¿¬¶ôÃ³ ¼öÁ¤
-	void copyContact();	//¿¬¶ôÃ³ º¹»ç
-	void removeContact();	//¿¬¶ôÃ³ Á¦°Å
-	void runOwnerMenu();	//¼ÒÀ¯ÀÚ ¸Ş´º ½ÇÇà
-	void runContactMenu();	//¿¬¶ôÃ³ ¸Ş´º ½ÇÇà
+	void addContact();	//ì—°ë½ì²˜ ì •ë³´ ì…ë ¥
+	void printContactList();	//ì—°ë½ì²˜ ì „ì²´ ëª©ë¡ ì¡°íšŒ
+	void printContactDetail();	//ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ
+	void editContact();	//ì—°ë½ì²˜ ìˆ˜ì •
+	void copyContact();	//ì—°ë½ì²˜ ë³µì‚¬
+	void removeContact();	//ì—°ë½ì²˜ ì œê±°
+	void runOwnerMenu();	//ì†Œìœ ì ë©”ë‰´ ì‹¤í–‰
+	void runContactMenu();	//ì—°ë½ì²˜ ë©”ë‰´ ì‹¤í–‰
 public:
 	Controller();
 	~Controller();
 
-	void runMainMenu();	//¸ŞÀÎ ¸Ş´º ½ÇÇà
+	void runMainMenu();	//ë©”ì¸ ë©”ë‰´ ì‹¤í–‰
 };
 

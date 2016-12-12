@@ -1,20 +1,20 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 
 class Menu
 {
 private:
-	char topMenu[3][32];	//ÃÖ»óÀ§ ¸Ş´º Á¤º¸
-	char ownerMenu[4][32];	//¼ÒÀ¯ÀÚ ¸Ş´º Á¤º¸
-	char contactMenu[7][32];	//¿¬¶ôÃ³ ¸Ş´º Á¤º¸
-	int menuType;	//0:ÃÖ»óÀ§ ¸Ş´º, 1:¼ÒÀ¯ÀÚ ¸Ş´º, 2:¿¬¶ôÃ³ ¸Ş´º
+	char topMenu[3][32];	//ìµœìƒìœ„ ë©”ë‰´ ì •ë³´
+	char ownerMenu[4][32];	//ì†Œìœ ì ë©”ë‰´ ì •ë³´
+	char contactMenu[7][32];	//ì—°ë½ì²˜ ë©”ë‰´ ì •ë³´
+	int menuType;	//0:ìµœìƒìœ„ ë©”ë‰´, 1:ì†Œìœ ì ë©”ë‰´, 2:ì—°ë½ì²˜ ë©”ë‰´
 public:
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	Menu();
 	~Menu();
 
-	void showMenu();	//ÇöÀç ¸Ş´º ¼±ÅÃ »óÅÂ¸¦ ÅëÇØ ¸Ş´º ¸ñ·Ï Ãâ·Â
+	void showMenu();	//í˜„ì¬ ë©”ë‰´ ì„ íƒ ìƒíƒœë¥¼ í†µí•´ ë©”ë‰´ ëª©ë¡ ì¶œë ¥
 	void setMenuSelection(int selection);
-	int execution();	//¼±ÅÃÇÑ ¸Ş´º ½ÇÇà
+	int execution();	//ì„ íƒí•œ ë©”ë‰´ ì‹¤í–‰
 };
 

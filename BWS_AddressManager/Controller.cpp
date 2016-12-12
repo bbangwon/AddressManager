@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Controller.h"
 using namespace std;
 
@@ -11,14 +11,14 @@ Controller::~Controller()
 {
 }
 
-//¸ŞÀÎ ¸Ş´º ½ÇÇà
+//ë©”ì¸ ë©”ë‰´ ì‹¤í–‰
 void Controller::runMainMenu()
 {
 	int menuNum;
 	do
 	{
-		menu.setMenuSelection(0);	//ÃÖ»óÀ§ ¸Ş´º ¼³Á¤
-		menuNum = menu.execution();	//¸Ş´º ½ÇÇà
+		menu.setMenuSelection(0);	//ìµœìƒìœ„ ë©”ë‰´ ì„¤ì •
+		menuNum = menu.execution();	//ë©”ë‰´ ì‹¤í–‰
 
 		switch (menuNum)
 		{
@@ -29,216 +29,216 @@ void Controller::runMainMenu()
 			runContactMenu();
 			break;
 		case 3:
-			cout << "ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù." << endl;
+			cout << "í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤." << endl;
 			break;
 		default:
-			cout << "Àß¸ø ÀÔ·Â Çß½À´Ï´Ù. ´Ù½Ã ÇØÁÖ¼¼¿ä" << endl;
+			cout << "ì˜ëª» ì…ë ¥ í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ í•´ì£¼ì„¸ìš”" << endl;
 			break;
 		}
 
 	} while (menuNum != 3);
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ ÀÔ·Â
+//ì†Œìœ ì ì •ë³´ ì…ë ¥
 void Controller::inputOwnerInfo()
 {
-	char name[20];	//ÀÌ¸§
-	char phoneNumber[13];	//ÀüÈ­¹øÈ£
-	char email[30];	//ÀÌ¸ŞÀÏ
-	char address[50];	//ÁÖ¼Ò
-	char twitterAccount[20];	//Æ®À§ÅÍ °èÁ¤
+	char name[20];	//ì´ë¦„
+	char phoneNumber[13];	//ì „í™”ë²ˆí˜¸
+	char email[30];	//ì´ë©”ì¼
+	char address[50];	//ì£¼ì†Œ
+	char twitterAccount[20];	//íŠ¸ìœ„í„° ê³„ì •
 
-	cout << "¼ÒÀ¯ÀÚ ÀÌ¸§: ";
+	cout << "ì†Œìœ ì ì´ë¦„: ";
 	cin >> name;
-	cout << "¼ÒÀ¯ÀÚ ÀüÈ­¹øÈ£: ";
+	cout << "ì†Œìœ ì ì „í™”ë²ˆí˜¸: ";
 	cin >> phoneNumber;
-	cout << "¼ÒÀ¯ÀÚ ÀÌ¸ŞÀÏ: ";
+	cout << "ì†Œìœ ì ì´ë©”ì¼: ";
 	cin >> email;
-	cout << "¼ÒÀ¯ÀÚ ÁÖ¼Ò: ";
+	cout << "ì†Œìœ ì ì£¼ì†Œ: ";
 	cin >> address;
-	cout << "¼ÒÀ¯ÀÚ Æ®À§ÅÍ °èÁ¤: ";
+	cout << "ì†Œìœ ì íŠ¸ìœ„í„° ê³„ì •: ";
 	cin >> twitterAccount;
-	cout << "ÀÔ·ÂÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù." << endl;
+	cout << "ì…ë ¥ì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 
 	owner.inputOwnerInfo(name, phoneNumber, email, address, twitterAccount);
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ Ãâ·Â
+//ì†Œìœ ì ì •ë³´ ì¶œë ¥
 void Controller::printOwnerInfo()
 {
 	owner.printOwnerInfo();
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ ¼öÁ¤
+//ì†Œìœ ì ì •ë³´ ìˆ˜ì •
 void Controller::editOwnerInfo()
 {
 	char editString[50];
 	int inputNum;
-	cout << "1. ¼ÒÀ¯ÀÚ ÀÌ¸§ ¼öÁ¤" << endl;
-	cout << "2. ¼ÒÀ¯ÀÚ ÀüÈ­¹øÈ£ ¼öÁ¤" << endl;
-	cout << "3. ¼ÒÀ¯ÀÚ ÀÌ¸ŞÀÏ ¼öÁ¤" << endl;
-	cout << "4. ¼ÒÀ¯ÀÚ ÁÖ¼Ò ¼öÁ¤" << endl;
-	cout << "5. ¼ÒÀ¯ÀÚ Æ®À§ÅÍ °èÁ¤ ¼öÁ¤" << endl;
-	cout << "6. ¼öÁ¤ ¾øÀÌ ÀÌÀü ¸Ş´º·Î" << endl;
+	cout << "1. ì†Œìœ ì ì´ë¦„ ìˆ˜ì •" << endl;
+	cout << "2. ì†Œìœ ì ì „í™”ë²ˆí˜¸ ìˆ˜ì •" << endl;
+	cout << "3. ì†Œìœ ì ì´ë©”ì¼ ìˆ˜ì •" << endl;
+	cout << "4. ì†Œìœ ì ì£¼ì†Œ ìˆ˜ì •" << endl;
+	cout << "5. ì†Œìœ ì íŠ¸ìœ„í„° ê³„ì • ìˆ˜ì •" << endl;
+	cout << "6. ìˆ˜ì • ì—†ì´ ì´ì „ ë©”ë‰´ë¡œ" << endl;
 	cin >> inputNum;
 
 	switch (inputNum)	
 	{
 	case 1:
-		cout << "¼öÁ¤ÇÒ ÀÌ¸§: ";
+		cout << "ìˆ˜ì •í•  ì´ë¦„: ";
 		cin >> editString;
 		owner.editOwnerInfo(editString, nullptr, nullptr, nullptr, nullptr);
-		cout << "¼ÒÀ¯ÀÚÀÇ ÀÌ¸§ÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì†Œìœ ìì˜ ì´ë¦„ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 2:
-		cout << "¼öÁ¤ÇÒ ÀüÈ­¹øÈ£: ";
+		cout << "ìˆ˜ì •í•  ì „í™”ë²ˆí˜¸: ";
 		cin >> editString;
 		owner.editOwnerInfo(nullptr, editString, nullptr, nullptr, nullptr);
-		cout << "¼ÒÀ¯ÀÚÀÇ ÀüÈ­¹øÈ£°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì†Œìœ ìì˜ ì „í™”ë²ˆí˜¸ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 3:
-		cout << "¼öÁ¤ÇÒ ÀÌ¸ŞÀÏ: ";
+		cout << "ìˆ˜ì •í•  ì´ë©”ì¼: ";
 		cin >> editString;
 		owner.editOwnerInfo(nullptr, nullptr, editString, nullptr, nullptr);
-		cout << "¼ÒÀ¯ÀÚÀÇ ÀÌ¸ŞÀÏÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì†Œìœ ìì˜ ì´ë©”ì¼ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 4:
-		cout << "¼öÁ¤ÇÒ ÁÖ¼Ò: ";
+		cout << "ìˆ˜ì •í•  ì£¼ì†Œ: ";
 		cin >> editString;
 		owner.editOwnerInfo(nullptr, nullptr, nullptr, editString, nullptr);
-		cout << "¼ÒÀ¯ÀÚÀÇ ÁÖ¼Ò°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì†Œìœ ìì˜ ì£¼ì†Œê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 5:
-		cout << "¼öÁ¤ÇÒ Æ®À§ÅÍ °èÁ¤ : ";
+		cout << "ìˆ˜ì •í•  íŠ¸ìœ„í„° ê³„ì • : ";
 		cin >> editString;
 		owner.editOwnerInfo(nullptr, nullptr, nullptr, nullptr, editString);
-		cout << "¼ÒÀ¯ÀÚÀÇ Æ®À§ÅÍ °èÁ¤ÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì†Œìœ ìì˜ íŠ¸ìœ„í„° ê³„ì •ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 	default:
-		cout << "¾Æ¹«°Íµµ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù." << endl;
+		cout << "ì•„ë¬´ê²ƒë„ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤." << endl;
 		break;
 	}
 }
 
-//¿¬¶ôÃ³ Á¤º¸ ÀÔ·Â
+//ì—°ë½ì²˜ ì •ë³´ ì…ë ¥
 void Controller::addContact()
 {
-	char name[20];	//ÀÌ¸§
-	char phoneNumber[13];	//ÀüÈ­¹øÈ£
-	char email[30];	//ÀÌ¸ŞÀÏ
-	char address[50];	//ÁÖ¼Ò
-	cout << "¿¬¶ôÃ³ ÀÌ¸§: ";
+	char name[20];	//ì´ë¦„
+	char phoneNumber[13];	//ì „í™”ë²ˆí˜¸
+	char email[30];	//ì´ë©”ì¼
+	char address[50];	//ì£¼ì†Œ
+	cout << "ì—°ë½ì²˜ ì´ë¦„: ";
 	cin >> name;
-	cout << "¿¬¶ôÃ³ ÀüÈ­¹øÈ£: ";
+	cout << "ì—°ë½ì²˜ ì „í™”ë²ˆí˜¸: ";
 	cin >> phoneNumber;
-	cout << "¿¬¶ôÃ³ ÀÌ¸ŞÀÏ: ";
+	cout << "ì—°ë½ì²˜ ì´ë©”ì¼: ";
 	cin >> email;
-	cout << "¿¬¶ôÃ³ ÁÖ¼Ò: ";
+	cout << "ì—°ë½ì²˜ ì£¼ì†Œ: ";
 	cin >> address;
 
 	contacts.inputContact(name, phoneNumber, email, address);
 }
 
-//¿¬¶ôÃ³ ÀüÃ¼ ¸ñ·Ï Á¶È¸
+//ì—°ë½ì²˜ ì „ì²´ ëª©ë¡ ì¡°íšŒ
 void Controller::printContactList()
 {
 	contacts.printContactList();
 }
 
-//¿¬¶ôÃ³ »ó¼¼ Á¶È¸
+//ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ
 void Controller::printContactDetail()
 {
 	int inputNum;
 	int index;
 	char name[20];
-	cout << "1. index·Î ¿¬¶ôÃ³ Á¶È¸" << endl;
-	cout << "2. ÀÌ¸§À¸·Î ¿¬¶ôÃ³ Á¶È¸" << endl;
+	cout << "1. indexë¡œ ì—°ë½ì²˜ ì¡°íšŒ" << endl;
+	cout << "2. ì´ë¦„ìœ¼ë¡œ ì—°ë½ì²˜ ì¡°íšŒ" << endl;
 	cin >> inputNum;
 
 	switch (inputNum)
 	{
 	case 1:
-		cout << "Á¶È¸ÇÒ ¿¬¶ôÃ³ index: ";
+		cout << "ì¡°íšŒí•  ì—°ë½ì²˜ index: ";
 		cin >> index;
 		contacts.printContact(index);
 		break;
 	case 2:
-		cout << "Á¶È¸ÇÒ ¿¬¶ôÃ³ ÀÌ¸§: ";
+		cout << "ì¡°íšŒí•  ì—°ë½ì²˜ ì´ë¦„: ";
 		cin >> name;
 		contacts.printContact(name);
 		break;
 	default:
-		cout << "Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù. ÀÌÀü ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù." << endl;
+		cout << "ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤. ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤." << endl;
 		break;
 	}
 }
 
-//¿¬¶ôÃ³ ¼öÁ¤
+//ì—°ë½ì²˜ ìˆ˜ì •
 void Controller::editContact()
 {
 	int index;
-	cout << "¼öÁ¤ÇÒ ¿¬¶ôÃ³ index: ";
+	cout << "ìˆ˜ì •í•  ì—°ë½ì²˜ index: ";
 	cin >> index;
 
 	char editString[50];
 	int inputNum;
-	cout << "1. ¿¬¶ôÃ³ ÀÌ¸§ ¼öÁ¤" << endl;
-	cout << "2. ¿¬¶ôÃ³ ÀüÈ­¹øÈ£ ¼öÁ¤" << endl;
-	cout << "3. ¿¬¶ôÃ³ ÀÌ¸ŞÀÏ ¼öÁ¤" << endl;
-	cout << "4. ¿¬¶ôÃ³ ÁÖ¼Ò ¼öÁ¤" << endl;
-	cout << "5. ¼öÁ¤ ¾øÀÌ ÀÌÀü ¸Ş´º·Î" << endl;
+	cout << "1. ì—°ë½ì²˜ ì´ë¦„ ìˆ˜ì •" << endl;
+	cout << "2. ì—°ë½ì²˜ ì „í™”ë²ˆí˜¸ ìˆ˜ì •" << endl;
+	cout << "3. ì—°ë½ì²˜ ì´ë©”ì¼ ìˆ˜ì •" << endl;
+	cout << "4. ì—°ë½ì²˜ ì£¼ì†Œ ìˆ˜ì •" << endl;
+	cout << "5. ìˆ˜ì • ì—†ì´ ì´ì „ ë©”ë‰´ë¡œ" << endl;
 	cin >> inputNum;
 
 	switch (inputNum)
 	{
 	case 1:
-		cout << "¼öÁ¤ÇÒ ÀÌ¸§: ";
+		cout << "ìˆ˜ì •í•  ì´ë¦„: ";
 		cin >> editString;
 		contacts.editContactByIndex(index, editString, nullptr, nullptr, nullptr);
-		cout << "¿¬¶ôÃ³ ÀÌ¸§ÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì—°ë½ì²˜ ì´ë¦„ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 2:
-		cout << "¼öÁ¤ÇÒ ÀüÈ­¹øÈ£: ";
+		cout << "ìˆ˜ì •í•  ì „í™”ë²ˆí˜¸: ";
 		cin >> editString;
 		contacts.editContactByIndex(index, nullptr, editString, nullptr, nullptr);
-		cout << "¿¬¶ôÃ³ ÀüÈ­¹øÈ£°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì—°ë½ì²˜ ì „í™”ë²ˆí˜¸ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 3:
-		cout << "¼öÁ¤ÇÒ ÀÌ¸ŞÀÏ: ";
+		cout << "ìˆ˜ì •í•  ì´ë©”ì¼: ";
 		cin >> editString;
 		contacts.editContactByIndex(index, nullptr, nullptr, editString, nullptr);
-		cout << "¿¬¶ôÃ³ ÀÌ¸ŞÀÏÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì—°ë½ì²˜ ì´ë©”ì¼ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	case 4:
-		cout << "¼öÁ¤ÇÒ ÁÖ¼Ò: ";
+		cout << "ìˆ˜ì •í•  ì£¼ì†Œ: ";
 		cin >> editString;
 		contacts.editContactByIndex(index, nullptr, nullptr, nullptr, editString);
-		cout << "¿¬¶ôÃ³ ÁÖ¼Ò°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù." << endl;
+		cout << "ì—°ë½ì²˜ ì£¼ì†Œê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 		break;
 	default:
-		cout << "¾Æ¹«°Íµµ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù." << endl;
+		cout << "ì•„ë¬´ê²ƒë„ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤." << endl;
 		break;
 	}
 }
 
-//¿¬¶ôÃ³ º¹»ç
+//ì—°ë½ì²˜ ë³µì‚¬
 void Controller::copyContact()
 {
 	int index;
-	cout << "º¹»çÇÒ ¿¬¶ôÃ³ index: ";
+	cout << "ë³µì‚¬í•  ì—°ë½ì²˜ index: ";
 	cin >> index;
 	contacts.copyContact(index);
 }
 
-//¿¬¶ôÃ³ Á¦°Å
+//ì—°ë½ì²˜ ì œê±°
 void Controller::removeContact()
 {
 	int index;
-	cout << "»èÁ¦ÇÒ ¿¬¶ôÃ³ index: ";
+	cout << "ì‚­ì œí•  ì—°ë½ì²˜ index: ";
 	cin >> index;
 	contacts.removeContactByIndex(index);
 }
 
-//¼ÒÀ¯ÀÚ ¸Ş´º ½ÇÇà
+//ì†Œìœ ì ë©”ë‰´ ì‹¤í–‰
 void Controller::runOwnerMenu()
 {
 	int menuNum;
@@ -258,16 +258,16 @@ void Controller::runOwnerMenu()
 			editOwnerInfo();
 			break;
 		case 4:
-			cout << "ÀÌÀü ¸Ş´º·Î µ¹¾Æ °©´Ï´Ù." << endl;
+			cout << "ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ ê°‘ë‹ˆë‹¤." << endl;
 			break;
 		default:
-			cout << "Àß¸ø ÀÔ·Â Çß½À´Ï´Ù. ´Ù½Ã ÇØÁÖ¼¼¿ä" << endl;
+			cout << "ì˜ëª» ì…ë ¥ í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ í•´ì£¼ì„¸ìš”" << endl;
 			break;
 		}
 	} while (menuNum != 4);
 }
 
-//¿¬¶ôÃ³ ¸Ş´º ½ÇÇà
+//ì—°ë½ì²˜ ë©”ë‰´ ì‹¤í–‰
 void Controller::runContactMenu()
 {
 	int menuNum;
@@ -297,10 +297,10 @@ void Controller::runContactMenu()
 			removeContact();
 			break;
 		case 7:
-			cout << "ÀÌÀü ¸Ş´º·Î µ¹¾Æ °©´Ï´Ù." << endl;
+			cout << "ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ ê°‘ë‹ˆë‹¤." << endl;
 			break;
 		default:
-			cout << "Àß¸ø ÀÔ·Â Çß½À´Ï´Ù. ´Ù½Ã ÇØÁÖ¼¼¿ä" << endl;
+			cout << "ì˜ëª» ì…ë ¥ í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ í•´ì£¼ì„¸ìš”" << endl;
 			break;
 		}
 

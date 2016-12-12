@@ -1,41 +1,41 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include "PersonalContact.h"
 
 class Contact
 {
 private:
-	PersonalContact contactInfo[100];	//100¸íÀÇ ¿¬¶ôÃ³ ÀúÀå °¡´ÉÇÑ ¹è¿­
-	int numberOfContact;	//ÇöÀç ÀúÀåµÈ ¿¬¶ôÃ³ °³¼ö
+	PersonalContact contactInfo[100];	//100ëª…ì˜ ì—°ë½ì²˜ ì €ì¥ ê°€ëŠ¥í•œ ë°°ì—´
+	int numberOfContact;	//í˜„ì¬ ì €ì¥ëœ ì—°ë½ì²˜ ê°œìˆ˜
 public:
-	//»ı¼ºÀÚ - ¸â¹ö ÃÊ±âÈ­¸¦ À§ÇØ »ı¼º
+	//ìƒì„±ì - ë©¤ë²„ ì´ˆê¸°í™”ë¥¼ ìœ„í•´ ìƒì„±
 	Contact();
 	~Contact();
 
-	//¿¬¶ôÃ³ Á¤º¸ ÀÔ·Â
+	//ì—°ë½ì²˜ ì •ë³´ ì…ë ¥
 	void inputContact(char *name,
 		char *phoneNumber = nullptr,
 		char *email = nullptr,
 		char *address = nullptr);
 
-	//¿¬¶ôÃ³ ÀüÃ¼ ¸ñ·Ï Á¶È¸
+	//ì—°ë½ì²˜ ì „ì²´ ëª©ë¡ ì¡°íšŒ
 	void printContactList();
 
-	//¿¬¶ôÃ³ »ó¼¼ Á¶È¸ - ÇÔ¼ö ¿À¹ö·Îµù
+	//ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ - í•¨ìˆ˜ ì˜¤ë²„ë¡œë”©
 	void printContact(int index);
 	void printContact(char *inName);
 
-	//¿¬¶ôÃ³ ¼öÁ¤
+	//ì—°ë½ì²˜ ìˆ˜ì •
 	void editContactByIndex(int index,
 		char *name,
 		char *phoneNumber = nullptr,
 		char *email = nullptr,
 		char *address = nullptr);
 
-	//¿¬¶ôÃ³ º¹»ç
+	//ì—°ë½ì²˜ ë³µì‚¬
 	void copyContact(int index);
 	
-	//¿¬¶ôÃ³ Á¦°Å
+	//ì—°ë½ì²˜ ì œê±°
 	void removeContactByIndex(int index);
 };
 

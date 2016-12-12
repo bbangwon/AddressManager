@@ -1,9 +1,9 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Contact.h"
 
 using namespace std;
 
-//»ı¼ºÀÚ
+//ìƒì„±ì
 Contact::Contact()
 {
 	numberOfContact = 0;
@@ -14,14 +14,14 @@ Contact::~Contact()
 {
 }
 
-//¿¬¶ôÃ³ Á¤º¸ ÀÔ·Â
+//ì—°ë½ì²˜ ì •ë³´ ì…ë ¥
 void Contact::inputContact(char * name, char * phoneNumber, char * email, char * address)
 {
 	contactInfo[numberOfContact].inputContact(name, phoneNumber, email, address);
 	numberOfContact++;
 }
 
-//¿¬¶ôÃ³ ÀüÃ¼ ¸ñ·Ï Á¶È¸
+//ì—°ë½ì²˜ ì „ì²´ ëª©ë¡ ì¡°íšŒ
 void Contact::printContactList()
 {
 	int i;
@@ -33,7 +33,7 @@ void Contact::printContactList()
 	}
 }
 
-//¿¬¶ôÃ³ »ó¼¼ Á¶È¸: index
+//ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ: index
 void Contact::printContact(int index)
 {
 	char name[20];
@@ -42,14 +42,14 @@ void Contact::printContact(int index)
 	char address[50];
 
 	contactInfo[index].getContact(name, phoneNumber, email, address);
-	cout << index << "ÀÇ index¸¦ °¡Áø ¿¬¶ôÃ³ Á¶È¸" << endl;
-	cout << "¿¬¶ôÃ³ ÀÌ¸§: " << name << endl;
-	cout << "¿¬¶ôÃ³ ÀüÈ­¹øÈ£: " << phoneNumber << endl;
-	cout << "¿¬¶ôÃ³ ÀÌ¸ŞÀÏ: " << email << endl;
-	cout << "¿¬¶ôÃ³ ÁÖ¼Ò: " << address << endl;
+	cout << index << "ì˜ indexë¥¼ ê°€ì§„ ì—°ë½ì²˜ ì¡°íšŒ" << endl;
+	cout << "ì—°ë½ì²˜ ì´ë¦„: " << name << endl;
+	cout << "ì—°ë½ì²˜ ì „í™”ë²ˆí˜¸: " << phoneNumber << endl;
+	cout << "ì—°ë½ì²˜ ì´ë©”ì¼: " << email << endl;
+	cout << "ì—°ë½ì²˜ ì£¼ì†Œ: " << address << endl;
 }
 
-//¿¬¶ôÃ³ »ó¼¼ Á¶È¸: ÀÌ¸§(ÇÔ¼ö ¿À¹ö·Îµù)
+//ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ: ì´ë¦„(í•¨ìˆ˜ ì˜¤ë²„ë¡œë”©)
 void Contact::printContact(char * inName)
 {
 	char name[20];
@@ -58,41 +58,41 @@ void Contact::printContact(char * inName)
 	char address[50];
 
 	int i;
-	cout << inName << "ÀÇ ÀÌ¸§À» °¡Áø ¿¬¶ôÃ³ Á¶È¸" << endl;
+	cout << inName << "ì˜ ì´ë¦„ì„ ê°€ì§„ ì—°ë½ì²˜ ì¡°íšŒ" << endl;
 
 	for (i = 0; i < numberOfContact; i++)
 	{
 		contactInfo[i].getContact(name, phoneNumber, email, address);
 		if (strcmp(inName, name) == 0)
 		{
-			cout << "¿¬¶ôÃ³ ÀÌ¸§: " << name << endl;
-			cout << "¿¬¶ôÃ³ ÀüÈ­¹øÈ£: " << phoneNumber << endl;
-			cout << "¿¬¶ôÃ³ ÀÌ¸ŞÀÏ: " << email << endl;
-			cout << "¿¬¶ôÃ³ ÁÖ¼Ò: " << address << endl;
+			cout << "ì—°ë½ì²˜ ì´ë¦„: " << name << endl;
+			cout << "ì—°ë½ì²˜ ì „í™”ë²ˆí˜¸: " << phoneNumber << endl;
+			cout << "ì—°ë½ì²˜ ì´ë©”ì¼: " << email << endl;
+			cout << "ì—°ë½ì²˜ ì£¼ì†Œ: " << address << endl;
 		}
 	}
 }
 
-//¿¬¶ôÃ³ ¼öÁ¤
+//ì—°ë½ì²˜ ìˆ˜ì •
 void Contact::editContactByIndex(int index, char * name, char * phoneNumber, char * email, char * address)
 {
 	contactInfo[index].editContact(name, phoneNumber, email, address);
 }
 
-//¿¬¶ôÃ³ º¹»ç
+//ì—°ë½ì²˜ ë³µì‚¬
 void Contact::copyContact(int index)
 {
 	contactInfo[numberOfContact] = PersonalContact(contactInfo[index]);
 	numberOfContact++;
 }
 
-//¿¬¶ôÃ³ Á¦°Å
+//ì—°ë½ì²˜ ì œê±°
 void Contact::removeContactByIndex(int index)
 {
-	//index°¡ 0º¸´Ù ÀÛ°Å³ª contactNumberº¸´Ù Å©¸é »èÁ¦ ºÒ°¡
+	//indexê°€ 0ë³´ë‹¤ ì‘ê±°ë‚˜ contactNumberë³´ë‹¤ í¬ë©´ ì‚­ì œ ë¶ˆê°€
 	if ((index >= numberOfContact) || (index < 0))
 	{
-		cout << index << "´Â »èÁ¦°¡ ºÒ°¡´ÉÇÑ ÀÎµ¦½º ÀÔ´Ï´Ù." << endl;
+		cout << index << "ëŠ” ì‚­ì œê°€ ë¶ˆê°€ëŠ¥í•œ ì¸ë±ìŠ¤ ì…ë‹ˆë‹¤." << endl;
 		return;
 	}
 

@@ -1,34 +1,34 @@
-#pragma once
+ï»¿#pragma once
 #include<iostream>
 
 class PersonalContact
 {
 private:
-	char name[20];	//ÀÌ¸§
-	char phoneNumber[13];	//ÀüÈ­¹øÈ£
-	char email[30];	//ÀÌ¸ŞÀÏ
-	char address[50];	//ÁÖ¼Ò
+	char name[20];	//ì´ë¦„
+	char phoneNumber[13];	//ì „í™”ë²ˆí˜¸
+	char email[30];	//ì´ë©”ì¼
+	char address[50];	//ì£¼ì†Œ
 public:
-	//±âº»»ı¼ºÀÚ
+	//ê¸°ë³¸ìƒì„±ì
 	PersonalContact();
 	~PersonalContact();
 
-	//º¹»ç»ı¼ºÀÚ
+	//ë³µì‚¬ìƒì„±ì
 	PersonalContact(PersonalContact &personal);
 	
-	//¿¬¶ôÃ³ ÀÔ·Â
+	//ì—°ë½ì²˜ ì…ë ¥
 	void inputContact(char *inName,
 		char *inPhoneNumber = nullptr,
 		char *inEmail = nullptr,
 		char *inAddress = nullptr);
 	
-	//¿¬¶ôÃ³ Á¶È¸
+	//ì—°ë½ì²˜ ì¡°íšŒ
 	void getContact(char *outName,
 		char *outPhoneNumber,
 		char *outEmail,
 		char *outAddress);
 
-	//¿¬¶ôÃ³ ¼öÁ¤
+	//ì—°ë½ì²˜ ìˆ˜ì •
 	void editContact(char *inName,
 		char *inPhoneNumber = nullptr,
 		char *inEmail = nullptr,

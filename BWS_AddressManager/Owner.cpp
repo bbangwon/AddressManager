@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Owner.h"
 
 using namespace std;
@@ -12,7 +12,7 @@ Owner::~Owner()
 {
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ ÀÔ·Â
+//ì†Œìœ ì ì •ë³´ ì…ë ¥
 void Owner::inputOwnerInfo(char * inName, char * inPhoneNumber, char * inEmail, char * inAddress, char * inTwitterAccount)
 {
 	if (inName != nullptr)
@@ -31,17 +31,17 @@ void Owner::inputOwnerInfo(char * inName, char * inPhoneNumber, char * inEmail, 
 		strcpy_s(twitterAccount, 20, inTwitterAccount);
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ Ãâ·Â
+//ì†Œìœ ì ì •ë³´ ì¶œë ¥
 void Owner::printOwnerInfo()
 {
-	cout << "¼ÒÀ¯ÀÚ ÀÌ¸§: " << name << endl;
-	cout << "¼ÒÀ¯ÀÚ ÀüÈ­¹øÈ£: " << phoneNumber << endl;
-	cout << "¼ÒÀ¯ÀÚ ÀÌ¸ŞÀÏ: " << email << endl;
-	cout << "¼ÒÀ¯ÀÚ ÁÖ¼Ò: " << address << endl;
-	cout << "¼ÒÀ¯ÀÚ Æ®À§ÅÍ °èÁ¤: " << twitterAccount << endl;
+	cout << "ì†Œìœ ì ì´ë¦„: " << name << endl;
+	cout << "ì†Œìœ ì ì „í™”ë²ˆí˜¸: " << phoneNumber << endl;
+	cout << "ì†Œìœ ì ì´ë©”ì¼: " << email << endl;
+	cout << "ì†Œìœ ì ì£¼ì†Œ: " << address << endl;
+	cout << "ì†Œìœ ì íŠ¸ìœ„í„° ê³„ì •: " << twitterAccount << endl;
 }
 
-//¼ÒÀ¯ÀÚ Á¤º¸ ¼öÁ¤
+//ì†Œìœ ì ì •ë³´ ìˆ˜ì •
 void Owner::editOwnerInfo(char * inName, char * inPhoneNumber, char * inEmail, char * inAddress, char * inTwitterAccount)
 {
 	if (inName != nullptr)

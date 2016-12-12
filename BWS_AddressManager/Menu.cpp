@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Menu.h"
 
 using namespace std;
@@ -6,24 +6,24 @@ using namespace std;
 
 Menu::Menu()
 {
-	strcpy_s(topMenu[0], 32, "1. ¼ÒÀ¯ÀÚ °ü¸® ±â´É");
-	strcpy_s(topMenu[1], 32, "2. ¿¬¶ôÃ³ Á¤º¸ °ü¸® ±â´É");
-	strcpy_s(topMenu[2], 32, "3. ÇÁ·Î±×·¥ Á¾·á");
+	strcpy_s(topMenu[0], 32, "1. ì†Œìœ ì ê´€ë¦¬ ê¸°ëŠ¥");
+	strcpy_s(topMenu[1], 32, "2. ì—°ë½ì²˜ ì •ë³´ ê´€ë¦¬ ê¸°ëŠ¥");
+	strcpy_s(topMenu[2], 32, "3. í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 
-	strcpy_s(ownerMenu[0], 32, "1. ¼ÒÀ¯ÀÚ Á¤º¸ ÀÔ·Â");
-	strcpy_s(ownerMenu[1], 32, "2. ¼ÒÀ¯ÀÚ Á¤º¸ Á¶È¸");
-	strcpy_s(ownerMenu[2], 32, "3. ¼ÒÀ¯ÀÚ Á¤º¸ ¼öÁ¤");
-	strcpy_s(ownerMenu[3], 32, "4. ÀÌÀü ¸Ş´º·Î");
+	strcpy_s(ownerMenu[0], 32, "1. ì†Œìœ ì ì •ë³´ ì…ë ¥");
+	strcpy_s(ownerMenu[1], 32, "2. ì†Œìœ ì ì •ë³´ ì¡°íšŒ");
+	strcpy_s(ownerMenu[2], 32, "3. ì†Œìœ ì ì •ë³´ ìˆ˜ì •");
+	strcpy_s(ownerMenu[3], 32, "4. ì´ì „ ë©”ë‰´ë¡œ");
 
-	strcpy_s(contactMenu[0], 32, "1. ¿¬¶ôÃ³ Ãß°¡ ÀÔ·Â");
-	strcpy_s(contactMenu[1], 32, "2. ¿¬¶ôÃ³ ¸ñ·Ï Á¶È¸");
-	strcpy_s(contactMenu[2], 32, "3. ¿¬¶ôÃ³ »ó¼¼ Á¶È¸");
-	strcpy_s(contactMenu[3], 32, "4. °³º° ¿¬¶ôÃ³ ¼öÁ¤");
-	strcpy_s(contactMenu[4], 32, "5. ¿¬¶ôÃ³ º¹»ç");
-	strcpy_s(contactMenu[5], 32, "6. °³º° ¿¬¶ôÃ³ Á¦°Å");
-	strcpy_s(contactMenu[6], 32, "7. ÀÌÀü ¸Ş´º·Î");
+	strcpy_s(contactMenu[0], 32, "1. ì—°ë½ì²˜ ì¶”ê°€ ì…ë ¥");
+	strcpy_s(contactMenu[1], 32, "2. ì—°ë½ì²˜ ëª©ë¡ ì¡°íšŒ");
+	strcpy_s(contactMenu[2], 32, "3. ì—°ë½ì²˜ ìƒì„¸ ì¡°íšŒ");
+	strcpy_s(contactMenu[3], 32, "4. ê°œë³„ ì—°ë½ì²˜ ìˆ˜ì •");
+	strcpy_s(contactMenu[4], 32, "5. ì—°ë½ì²˜ ë³µì‚¬");
+	strcpy_s(contactMenu[5], 32, "6. ê°œë³„ ì—°ë½ì²˜ ì œê±°");
+	strcpy_s(contactMenu[6], 32, "7. ì´ì „ ë©”ë‰´ë¡œ");
 
-	//¸Ş´º ±âº»°ª
+	//ë©”ë‰´ ê¸°ë³¸ê°’
 	menuType = 0;
 }
 
@@ -32,7 +32,7 @@ Menu::~Menu()
 {
 }
 
-//ÇöÀç ¸Ş´º ¼±ÅÃ »óÅÂ¸¦ ÅëÇØ ¸Ş´º ¸ñ·Ï Ãâ·Â
+//í˜„ì¬ ë©”ë‰´ ì„ íƒ ìƒíƒœë¥¼ í†µí•´ ë©”ë‰´ ëª©ë¡ ì¶œë ¥
 void Menu::showMenu()
 {
 	if (menuType == 0)
@@ -60,13 +60,13 @@ void Menu::showMenu()
 	}
 }
 
-//Ã¹¹øÂ° ´Ü°è ¸Ş´º ¼±ÅÃ
+//ì²«ë²ˆì§¸ ë‹¨ê³„ ë©”ë‰´ ì„ íƒ
 void Menu::setMenuSelection(int selection)
 {
 	menuType = selection;
 }
 
-//¼±ÅÃÇÑ ¸Ş´º ½ÇÇà
+//ì„ íƒí•œ ë©”ë‰´ ì‹¤í–‰
 int Menu::execution()
 {
 	int selection;
